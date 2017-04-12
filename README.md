@@ -13,3 +13,12 @@ Masyarakat dapat membuat laporan melalui aplikasi ini, laporan akan sampai ke ak
 ### Modul 3 Kegiatan PKL
 Kantor Kecamatan Coblong dapat membuat kegiatan-kegiatan yang berkaitan dengan PKL kemudian diumumkan melalui aplikasi ini.
 
+## URL
+### Aplikasi ini dapat dikunjungi melalui:
+### https://lapor-pkl.herokuapp.com/
+
+
+## Developer
+### Cut Meurah Rudi
+### Elvina Kusumawardhani
+### Nur Lathifah Ulfah
