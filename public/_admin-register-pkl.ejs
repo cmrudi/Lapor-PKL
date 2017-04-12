@@ -1,0 +1,81 @@
+<% layout('template-admin') -%>
+<% block('menu-tambah-pkl').append('active') %>
+<% block('map').append('https://lapor-pkl.herokuapp.com/javascript/map.js') %>
+<div class="col-sm-7">
+	<h2>Daftar PKL</h2>
+	<form class="left-form" onsubmit="return addPKLByAdmin()">
+		<div class="imgcontainer">
+		<img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar">
+		</div>
+
+		<label><b>Nama Pemilik</b></label>
+		<input id="namaPemilik" type="text" placeholder="Nama Pemilik" name="name" required>
+
+		<label><b>Pasfoto Pemilik</b></label>
+		<input type="file" placeholder="Browse" name="uname" >
+		
+		<label><b>Jenis Dagangan</b></label><br>
+		<select id="jenisDagangan" name="dagangan">
+			<option value="dagangan-1">Makanan dan Minuman</option>
+			<option value="dagangan-2">Pakaian, Tekstil dan Mainan</option>
+			<option value="dagangan-3">Kelontong</option>
+			<option value="dagangan-4">Sayuran dan Buah-buahan</option>
+			<option value="dagangan-5">Obat-obatan</option>
+			<option value="dagangan-6">Barang dan Cetakan</option>
+			<option value="dagangan-7">Peralatan Bekas</option>
+			<option value="dagangan-8">Lain-lain</option>
+		</select>
+		<br>
+
+		<label><b>Alamat Usaha</b></label>
+		<input id="formAddress" type="text" placeholder="Alamat Usaha" name="address" readonly required>
+		<input id="formCoordinate" type="hidden" placeholder="Koordinat Usaha" name="coordinate" required>
+		
+		<label><b>Waktu Usaha</b></label>
+		<br>
+		<fieldset id="dayArray">
+			<input id="daySenin" name="day" type="checkbox" value="senin">Senin<br>
+			<input id="daySelasa" name="day" type="checkbox" value="selasa">Selasa<br>
+			<input id="dayRabu" name="day" type="checkbox" value="rabu">Rabu<br>
+			<input id="dayKamis" name="day" type="checkbox" value="kamis">Kamis<br>
+			<input id="dayJumat" name="day" type="checkbox" value="jumat">Jumat<br>
+			<input id="daySabtu" name="day" type="checkbox" value="sabtu">Sabtu<br>
+			<input id="dayMinggu" name="day" type="checkbox" value="minggu">Minggu<br>
+		</fieldset>
+		<br>
+		<input type="time" name="startTime" id="startTime" placeholder="Start Time" required> - 
+		<input type="time" name="endTime" id="endTime" placeholder="End Time" required>
+		<br>
+		<label><b>Jumlah Modal</b></label>
+		<input id="jumlahModal" type="text" placeholder="Jumlah Modal" name="modal" required>
+			
+		<label><b>Perlengkapan</b></label>
+		<input id="perlengkapan" type="text" placeholder="Perlengakapan" name="perlengkapan" required>
+		
+		<label><b>Foto KTP</b></label>
+		<input type="file" placeholder="Browse" name="uname" >
+		
+		<label><b>Foto Kartu Keluarga</b></label>
+		<input type="file" placeholder="Browse" name="uname" >
+		
+		<label><b>Surat Pernyataan</b></label>
+		<input type="file" placeholder="Browse" name="uname" >	
+		
+		<button id="register-pkl-button" type="submit">Daftar</button>
+		<button type="button" class="cancelbtn" id="cancel">Cancel</button>
+	</form>
+</div>
+<div class="col-sm-5">
+	<h2>Tentukan Lokasi</h2>
+	<div>
+		<input class="geocode-text" id="address" type="textbox" value="" placeholder="Input Location"><input class="geocode-button" type="button" value="Search" onclick="codeAddress()">
+	</div>
+	<div id="map"></div>	
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWB2rDgaj_jw8qDmsMIGshyvTekFDUxmE&callback=initMap"></script>
+</div>
+
+<script>
+    document.getElementById("cancel").onclick = function () {
+        location.href = "https://lapor-pkl.herokuapp.com/admin/main";
+    };
+</script>

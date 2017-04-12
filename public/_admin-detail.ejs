@@ -1,0 +1,27 @@
+<% layout('template-admin') -%>
+<% block('menu-home').append('active') %>
+<% block('map').append('https://lapor-pkl.herokuapp.com/javascript/mainmap.js') %>
+<div class="col-sm-7 left-top-empty right-bottom-empty">
+	<div id="mainmap"></div>	
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWB2rDgaj_jw8qDmsMIGshyvTekFDUxmE&callback=initMap"></script>
+</div>
+<div class="col-sm-5 left-top-empty right-bottom-empty scrolldiv">
+	<div class="jumbotron detail">
+		<h3><%= name %></h3>
+		<h5><%= address %></h5>
+		<h6>Uploaded at <%= date %></h6>
+		<br>
+		<br>
+		<br>
+		<br>
+		<h5>Jam Buka <%= start %> - <%= end %></h5>
+		<br>
+		<h6>Modal Rp.<%= capital %></h6>
+		<br>
+		<h6>Perlengakapan : <%= resource %></h6>
+		<br>
+		<input type="hidden" id="pklid" value=<%= id %>>
+		<button type="button" onclick="verifikasiPKL()" id="verifikasi-pkl" class="btn btn-success">Verifikasi</button>
+		<button type="button" onclick="deletePKL()" class="btn btn-danger">Hapus</button>
+	</div>
+</div>

@@ -1,0 +1,18 @@
+<% layout('template-admin') -%>
+<% block('menu-laporan').append('active') %>
+<% block('map').append('https://lapor-pkl.herokuapp.com/javascript/mainmap.js') %>
+<% block('angular').append('https://lapor-pkl.herokuapp.com/javascript/angular-app.js') %>
+<div class="col-sm-7 left-top-empty right-bottom-empty">
+	<div id="mainmap"></div>	
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWB2rDgaj_jw8qDmsMIGshyvTekFDUxmE&callback=initMap"></script>
+</div>
+<div class="col-sm-5 left-top-empty right-bottom-empty scrolldiv" ng-app="pklApp" ng-controller="laporanCtrl">
+	<a href="https://lapor-pkl.herokuapp.com/admin/laporan-detail/{{ report._id }}" ng-repeat="report in laporan">
+		<div class="jumbotron list">
+			<h3>{{ report.namaLaporan }}</h3>
+			<h5>{{ report.lokasiLaporan}}</h5>
+			<h6>Uploaded at {{report.date | date:'d MMMM yyyy  hh:mm'}}</h6>
+			<span class="label label-warning">{{ report.status == "invalid" ? "Belum Ditindaklanjuti" : "Sudah Ditindaklanjuti" }}</span>
+		</div>
+	</a>
+</div>

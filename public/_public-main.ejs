@@ -1,0 +1,17 @@
+<% layout('template-main') -%>
+<% block('menu-home').append('active') %>
+<% block('map').append('https://lapor-pkl.herokuapp.com/javascript/mainmap.js') %>
+<% block('angular').append('https://lapor-pkl.herokuapp.com/javascript/angular-app.js') %>
+<div class="col-sm-7 left-top-empty right-bottom-empty">
+	<div id="mainmap"></div>	
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWB2rDgaj_jw8qDmsMIGshyvTekFDUxmE&callback=initMap"></script>
+</div>
+<div class="col-sm-5 left-top-empty right-bottom-empty scrolldiv" ng-app="pklApp" ng-controller="allpklCtrl">
+	<a ng-repeat="pkl in PKL" href="https://lapor-pkl.herokuapp.com/detail/{{ pkl._id }}">
+		<div class="jumbotron list">
+			<h3>{{ pkl.name }}</h3>
+			<h5>{{ pkl.address }}</h5>
+			<h6>Uploaded at {{pkl.date | date:'d MMMM yyyy  hh:mm'}}</h6>
+		</div>
+	</a>
+</div>

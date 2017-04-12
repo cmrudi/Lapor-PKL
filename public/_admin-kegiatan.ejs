@@ -1,0 +1,24 @@
+<% layout('template-admin') -%>
+<% block('menu-kegiatan').append('active') %>
+<% block('map').append('https://lapor-pkl.herokuapp.com/javascript/mainmap.js') %>
+<% block('angular').append('https://lapor-pkl.herokuapp.com/javascript/angular-app.js') %>
+<div class="col-sm-7 left-top-empty right-bottom-empty">
+	<div id="mainmap"></div>	
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWB2rDgaj_jw8qDmsMIGshyvTekFDUxmE&callback=initMap"></script>
+</div>
+<div class="col-sm-5 left-top-empty right-bottom-empty scrolldiv" ng-app="pklApp" ng-controller="kegiatanCtrl">
+	<a href="https://lapor-pkl.herokuapp.com/admin/add-kegiatan">
+		<div class="jumbotron list add-kegiatan">
+			<br>
+			<h4>Tambah Kegiatan</h3>
+			<br>
+		</div>
+	</a>
+	<a href="https://lapor-pkl.herokuapp.com/admin/kegiatan-detail/{{ keg._id }}" ng-repeat="keg in kegiatan">
+		<div class="jumbotron list">
+			<h3>{{ keg.namaKegiatan }}</h3>
+			<h5>{{ keg.lokasiKegiatan }}</h5>
+			<h6>Uploaded at {{keg.date | date:'d MMMM yyyy  hh:mm'}}</h6>
+		</div>
+	</a>
+</div>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lapor-PKL</title>
+		<link rel="stylesheet" href="https://lapor-pkl.herokuapp.com/stylesheets/main.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+		<script src="https://lapor-pkl.herokuapp.com/javascript/ajax.js"></script>
+	</head>
+	<body>
+		<%- body -%>
+		<form class="loginform" onsubmit="return <%= block('login') %>">
+			<div class="imgcontainer">
+			<img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar">
+			</div>
+
+			<label><b>Email</b></label>
+			<input type="text" placeholder="Masukkan Email" name="email" id="email" required>
+
+			<label><b>Password</b></label>
+			<input type="password" placeholder="Masukkan Password" name="password" id="password" required>
+				
+			<button type="submit">Login</button>
+			</div>
+
+			<div class="gotoregister" style="background-color:#f1f1f1">
+			<span class="psw">Go To <a href="<%= block('register') %>">Register</a></span>
+		</div>
+</form>
+	</body>
+</html>

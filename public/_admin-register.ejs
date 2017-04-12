@@ -1,0 +1,6 @@
+<% layout('template-register') -%>
+<% block('title').append('Daftar Akun Admin') %>
+<% block('register').append('https://lapor-pkl.herokuapp.com/admin') %>
+<% block('form-url').append('registerAdmin()') %>
+<label><b>Nomor Induk Pegawai (NIK)</b></label>
+<input type="text" placeholder="Masukkan NIP" name="NIP" id="NIP" required>

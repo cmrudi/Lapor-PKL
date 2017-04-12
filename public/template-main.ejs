@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Lapor PKL</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src=<%= block('map') %>></script>
+  <script src=<%= block('angular') %>></script>
+  <link rel="stylesheet" href="https://lapor-pkl.herokuapp.com/stylesheets/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://lapor-pkl.herokuapp.com/javascript/ajax.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://lapor-pkl.herokuapp.com/main">Lapor PKL</a>
+    </div>
+    <ul class="nav navbar-nav pull-right">
+      <li class=<%= block('menu-home') %>><a href="https://lapor-pkl.herokuapp.com/main">Home</a></li>
+      <li class=<%= block('menu-kegiatan') %>><a href="https://lapor-pkl.herokuapp.com/kegiatan">Kegiatan</a></li>
+      <li class=<%= block('menu-daftar') %>><a href="https://lapor-pkl.herokuapp.com/register-pkl">Daftar</a></li>
+      <li class=<%= block('menu-lapor') %>><a href="https://lapor-pkl.herokuapp.com/lapor-pkl">Lapor</a></li>
+      <li><a href="https://lapor-pkl.herokuapp.com">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+  
+<div class="container left-top-empty">
+  <div class="row left-top-empty">
+  	<%- body -%>
+  </div>
+</div>
+
+</body>
+</html>

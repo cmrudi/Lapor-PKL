@@ -1,0 +1,43 @@
+<% layout('template-main') -%>
+<% block('menu-lapor').append('active') %>
+<% block('map').append('https://lapor-pkl.herokuapp.com/javascript/map.js') %>
+<div class="col-sm-7">
+	<h2>Lapor PKL</h2>
+	<form class="left-form" onsubmit="return addLaporan()">
+		<div class="imgcontainer">
+		<img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar">
+		</div>
+
+		<label><b>Judul Laporan</b></label>
+		<input type="text" placeholder="Judul Laporan" id="namaLaporan" name="uname" required>
+		
+		<label><b>Foto Lokasi</b></label>
+		<input type="file" placeholder="Browse" name="uname" required>
+		
+		<label><b>Lokasi</b></label>
+		<input id="formAddress" type="text" placeholder="Alamat" name="uname" readonly required>
+		<input id="formCoordinate" type="hidden" placeholder="Koordinat Usaha" name="uname" required>
+			
+		<label><b>Deskripsi</b></label>
+		<input id="deskripsiLaporan" type="text" placeholder="Deskripsi" name="uname" required>
+		
+		<button type="submit">Lapor</button>
+
+		<button type="button" class="cancelbtn" id="cancel">Cancel</button>
+	
+	</form>
+</div>
+<div class="col-sm-5">
+	<h2>Tentukan Lokasi</h2>
+	<div>
+		<input class="geocode-text" id="address" type="textbox" value="" placeholder="Input Location"><input class="geocode-button" type="button" value="Search" onclick="codeAddress()">
+	</div>
+	<div id="map"></div>	
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWB2rDgaj_jw8qDmsMIGshyvTekFDUxmE&callback=initMap"></script>
+</div>
+
+<script>
+    document.getElementById("cancel").onclick = function () {
+        location.href = "https://lapor-pkl.herokuapp.com/main";
+    };
+</script>
